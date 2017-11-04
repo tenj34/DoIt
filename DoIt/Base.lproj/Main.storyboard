@@ -12,7 +12,7 @@
         <!--Do It-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TasksViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,7 @@
                     <connections>
                         <outlet property="tableView" destination="ciP-uw-iDs" id="9K8-Ef-Ld8"/>
                         <segue destination="eG2-zV-VTg" kind="show" identifier="addSegue" id="zjO-PG-igT"/>
+                        <segue destination="pfq-9H-rAe" kind="show" identifier="selectTaskSegue" id="ogo-Hg-f7w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,7 +109,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-h0-WJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="8"/>
+            <point key="canvasLocation" x="-382" y="24"/>
+        </scene>
+        <!--Complete Task View Controller-->
+        <scene sceneID="mgr-XU-gha">
+            <objects>
+                <viewController id="pfq-9H-rAe" customClass="CompleteTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TjB-fD-RZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pV9-zq-cWx">
+                                <rect key="frame" x="158" y="139" width="59.5" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xGI-PZ-gMz">
+                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9y-hD-OaI">
+                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDg-5S-dTA">
+                                <rect key="frame" x="139" y="194" width="97" height="30"/>
+                                <state key="normal" title="Accomplished"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="pfq-9H-rAe" eventType="touchUpInside" id="YrD-PR-jwI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oDg-5S-dTA" firstAttribute="centerX" secondItem="TjB-fD-RZ5" secondAttribute="centerX" id="Cky-eq-DEj"/>
+                            <constraint firstItem="oDg-5S-dTA" firstAttribute="top" secondItem="E9y-hD-OaI" secondAttribute="bottom" constant="25" id="INB-bK-pfN"/>
+                            <constraint firstItem="pV9-zq-cWx" firstAttribute="centerX" secondItem="TjB-fD-RZ5" secondAttribute="centerX" id="g69-p7-TkQ"/>
+                            <constraint firstItem="pV9-zq-cWx" firstAttribute="top" secondItem="rdu-12-otS" secondAttribute="top" constant="75" id="xua-NG-ecp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rdu-12-otS"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="E9y-hD-OaI" id="zqu-eH-KmZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iz8-Bb-uxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-383" y="836"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9xV-3a-7gG">
